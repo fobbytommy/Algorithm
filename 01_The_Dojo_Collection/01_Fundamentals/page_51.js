@@ -91,3 +91,30 @@ const bracesValidation = str => {
 // var str = "A(1)s[0(n]0{t) 0}k";
 var str = "T(o{is}b[ es ] ev (er) ) [ha {{ha }}ha ]";
 console.log(bracesValidation(str));
+
+// String: Is Palindrome
+console.log("----------------------------------------------------");
+const strictPalindrome = str => {
+	for (let i = 0; i < str.length / 2; i++) {
+		if (str.charCodeAt(i) !== str.charCodeAt(str.length - 1 - i)) {
+			return false;
+		}
+	}
+	return true;
+};
+// let amIPalindrome = "racecar";
+let amIPalindrome = "able was i ere i saw elba";
+console.log(strictPalindrome(amIPalindrome));
+
+const doIgnorePalin = str => {
+	str = str.replace(/[^A-Za-z]/g, "");
+	for (let i = 0; i < str.length; i++) {
+		if (str.charAt(i).toLowerCase() !== str.charAt(str.length - 1 - i).toLowerCase()) {
+			return false;
+		}
+	}
+	return true;
+};
+// let strPalin = "oho!";
+let strPalin = "Able was I, ere I saw Elba";
+console.log(doIgnorePalin(strPalin));
